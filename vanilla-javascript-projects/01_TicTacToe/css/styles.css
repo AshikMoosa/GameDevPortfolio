@@ -17,6 +17,31 @@ main .hero {
   flex-direction: row;
   height: 100vh;
   background: #ece5d5;
+  outline: 6px dashed #e9b98b;
+  outline-offset: -3em;
+}
+
+.hero .misc-ellipses img {
+  position: fixed;
+  z-index: 2;
+}
+
+.misc-ellipses img:first-child {
+  top: 1em;
+}
+
+.misc-ellipses img:nth-child(2) {
+  top: 1em;
+  right: 1em;
+}
+
+.misc-ellipses img:nth-child(3) {
+  bottom: -0.5em;
+}
+
+.misc-ellipses img:last-child {
+  bottom: -0.5em;
+  right: 1em;
 }
 
 .hero .title {
@@ -65,5 +90,7 @@ main .hero {
 }
 
 .cover img {
+  position: relative;
   height: 100%;
+  z-index: 1;
 }
