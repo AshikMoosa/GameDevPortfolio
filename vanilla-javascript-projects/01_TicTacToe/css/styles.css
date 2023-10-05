@@ -8,4 +8,62 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+/* Cover Styles */
+main .hero {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  background: #ece5d5;
+}
+
+.hero .title {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  align-items: center;
+}
+
+.title h1 {
+  cursor: default;
+  color: var(--O-Color-500, #e9b98b);
+  margin-top: 0.75em;
+  margin-bottom: 0.25em;
+  padding: 0em 0.5em;
+  font-family: Inter;
+  font-size: 200px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 192px; /* 96% */
+  letter-spacing: 20px;
+  text-transform: uppercase;
+}
+
+.title button {
+  border-radius: 77px;
+  background: hsl(200deg 11.73% 35.1%);
+  color: #ece5d5;
+  padding: 1em 6em;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.title button:hover {
+  cursor: pointer;
+  background: hsl(200 12% 15% / 1);
+}
+
+.hero .cover {
+  flex-basis: 50%;
+}
+
+.cover img {
+  height: 100%;
 }
