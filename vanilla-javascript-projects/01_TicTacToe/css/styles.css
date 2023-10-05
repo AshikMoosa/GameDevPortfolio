@@ -24,6 +24,7 @@ main .hero {
 .hero .misc-ellipses img {
   position: fixed;
   z-index: 2;
+  pointer-events: none;
 }
 
 .misc-ellipses img:first-child {
@@ -54,8 +55,8 @@ main .hero {
 .title h1 {
   cursor: default;
   color: var(--O-Color-500, #e9b98b);
-  margin-top: 0.75em;
-  margin-bottom: 0.25em;
+  margin-top: 0.5em;
+  margin-bottom: 0.2em;
   padding: 0em 0.5em;
   font-family: Inter;
   font-size: 200px;
@@ -70,7 +71,7 @@ main .hero {
   border-radius: 77px;
   background: hsl(200deg 11.73% 35.1%);
   color: #ece5d5;
-  padding: 1em 6em;
+  padding: 0.5em 6em;
   font-family: Inter;
   font-size: 20px;
   font-style: normal;
@@ -92,5 +93,6 @@ main .hero {
 .cover img {
   position: relative;
   height: 100%;
+  pointer-events: none;
   z-index: 1;
 }
