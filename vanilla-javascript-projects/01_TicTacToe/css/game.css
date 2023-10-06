@@ -19,6 +19,12 @@ main {
   align-items: center;
   background: #ece5d5;
   height: 100vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
 }
 
 main .game-container {
@@ -30,6 +36,12 @@ main .game-container {
   box-shadow: -32px 44px 60px 0px rgba(15, 12, 36, 0.35), -8px 15px 20px 0px rgba(0, 0, 0, 0.65), -4px 4px 4px 4px rgba(155, 164, 167, 0.4) inset, 2px -2px 4px 6px rgba(0, 0, 0, 0.45) inset;
   height: 800px;
   width: 800px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
 }
 
 .game-container div {
@@ -205,13 +217,14 @@ main .game-framer {
 
 /* Game Turn Styles */
 main .game-turn {
-  /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
   margin-top: 2em;
   width: 800px;
   height: 100px;
   align-items: center;
+  position: absolute;
+  bottom: 7em;
 }
 
 .game-turn .turn-icons {
@@ -245,6 +258,7 @@ main .game-turn {
   align-items: center;
   width: 100%;
   justify-content: space-evenly;
+  margin-left: 0.5em;
 }
 
 .score h1 {
