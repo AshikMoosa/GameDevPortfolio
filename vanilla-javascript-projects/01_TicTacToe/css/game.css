@@ -282,3 +282,132 @@ main .game-turn {
   line-height: normal;
   letter-spacing: 7px;
 }
+
+/* Game Modal Styles */
+main .game-modal {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.06) 18.75%, rgba(0, 0, 0, 0) 49.71%, rgba(0, 0, 0, 0.04) 82.81%, rgba(0, 0, 0, 0.2) 100%), var(--X-Color-500, #c6d4d9);
+  box-shadow: -16px 28px 108px 0px rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  z-index: 3;
+}
+
+.game-modal .game-lines,
+.game-modal .game-lines2,
+.game-modal .game-lines3 {
+  position: absolute;
+  border-top: 2px solid #edd2a0;
+  border-bottom: 2px solid #edd2a0;
+  height: 470px;
+  width: 30%;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  z-index: 1;
+}
+
+.game-modal .game-lines2 {
+  height: 430px;
+  width: 50%;
+  z-index: 3;
+}
+
+.game-modal .game-lines3 {
+  height: 430px;
+  border-style: dashed;
+  border-left: 0;
+  border-right: 0;
+  width: 70%;
+  z-index: 2;
+}
+
+.game-modal .game-icon {
+  position: absolute;
+  top: -28%;
+  right: 0;
+  left: 0;
+}
+
+.game-modal .game-icon img {
+  width: 250px;
+  height: 250px;
+  pointer-events: none;
+}
+
+.game-modal .game-result {
+  border-radius: 48px;
+  border: 3px dashed var(--Gray-600, #828c90);
+  width: 100%;
+  height: 80%;
+  margin: 2em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.game-modal .result-heading {
+  margin: 0.5em;
+  color: #4f5d64;
+  text-align: center;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 14.4px;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.game-modal .game-actions button {
+  position: relative;
+  padding: 8px 16px;
+  margin: 0em 0.5em;
+  color: #eed2a1;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  background: var(--Gray-900, #4f5d64);
+  box-shadow: -2px 2px 2px 4px rgba(155, 164, 167, 0.4) inset, 2px -2px 2px 4px rgba(0, 0, 0, 0.45) inset;
+  z-index: 5;
+}
+
+.game-modal .game-actions button:hover {
+  cursor: pointer;
+  background: hsl(200 12% 15% / 1);
+}
+
+.game-modal .misc-ellipses img {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.game-modal .misc-ellipses img:first-child {
+  top: 3.5em;
+  left: 2em;
+}
+
+.game-modal .misc-ellipses img:nth-child(2) {
+  top: 3.5em;
+  right: 3em;
+}
+
+.game-modal .misc-ellipses img:nth-child(3) {
+  bottom: 2em;
+  left: 2em;
+}
+
+.game-modal .misc-ellipses img:last-child {
+  bottom: 2em;
+  right: 3em;
+}
