@@ -40,6 +40,17 @@ main .game-container {
   box-shadow: none;
 }
 
+.game-container h2 {
+  height: fit-content;
+  color: #eed3a3;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 14.4px;
+  text-transform: uppercase;
+}
+
 .game-container .item1 {
   border-top-left-radius: 2em;
   display: flex;
@@ -68,12 +79,62 @@ main .game-container {
 }
 
 /* Misc Ellipses Styles */
+.item1 .misc-ellipses {
+  display: flex;
+}
+
+.item1 .misc-ellipses h2 {
+  margin: 2.5em 3.5em;
+}
+
 .item1 .misc-ellipses img {
   padding: 1.5em 0;
 }
 
+.item2 h2 {
+  display: flex;
+  justify-content: center;
+  margin: 2.5em 0em;
+}
+
+.item3 .misc-ellipses {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.item3 .misc-ellipses h2 {
+  margin: 2.5em 1.5em;
+}
+
 .item3 .misc-ellipses img {
   padding: 1.5em 1em;
+}
+
+.item7 .misc-ellipses {
+  display: flex;
+}
+
+.item7 .misc-ellipses h2 {
+  margin: 1.75em 0.5em;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 8px;
+}
+
+.item9 .misc-ellipses {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.item9 .misc-ellipses h2 {
+  margin: 1.75em -2.5em;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 8px;
 }
 
 .item9 .misc-ellipses img {
