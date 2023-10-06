@@ -14,6 +14,7 @@ body {
 /* Game Container Styles */
 main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #ece5d5;
@@ -200,4 +201,70 @@ main .game-framer {
 
 .game-framer .item9 img {
   border-bottom-right-radius: 2em;
+}
+
+/* Game Turn Styles */
+main .game-turn {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+  width: 800px;
+  height: 100px;
+  align-items: center;
+}
+
+.game-turn .turn-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.turn-icons .star img {
+  width: 100px;
+  height: 100px;
+}
+
+.turn-icons .planet img {
+  width: 100px;
+  height: 100px;
+}
+
+.turn-icons .spinner {
+  border: 10px solid #eed3a3;
+  box-shadow: 1px 1px 3px 3px #d1c4b3;
+  background: #eed3a3;
+  border-radius: 5em;
+}
+
+.game-turn .score {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.score h1 {
+  color: var(--Gray-900, #4f5d64);
+  text-align: center;
+  font-family: Inter;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 10px;
+}
+
+.score h3 {
+  color: var(--Gray-600, #828c90);
+  text-align: center;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 7px;
 }
