@@ -224,7 +224,7 @@ main .game-turn {
   height: 100px;
   align-items: center;
   position: absolute;
-  bottom: 7em;
+  bottom: 10em;
 }
 
 .game-turn .turn-icons {
