@@ -27,27 +27,36 @@ main .game-container {
   background: rgba(79, 93, 100, 1);
   border-radius: 2em;
   box-shadow: -32px 44px 60px 0px rgba(15, 12, 36, 0.35), -8px 15px 20px 0px rgba(0, 0, 0, 0.65), -4px 4px 4px 4px rgba(155, 164, 167, 0.4) inset, 2px -2px 4px 6px rgba(0, 0, 0, 0.45) inset;
-  height: 700px;
-  width: 700px;
+  height: 800px;
+  width: 800px;
 }
 
 .game-container div {
   box-shadow: -2px 2px 2px 4px rgba(155, 164, 167, 0.4) inset, 2px -2px 2px 4px rgba(0, 0, 0, 0.45) inset;
 }
 
+.game-container .misc-ellipses,
+.game-container .misc-line {
+  box-shadow: none;
+}
+
 .game-container .item1 {
   border-top-left-radius: 2em;
+  display: flex;
+  flex-direction: column;
 }
 
 .game-container .item3 {
   border-top-right-radius: 2em;
   text-align: end;
+  display: flex;
+  flex-direction: column;
 }
 
 .game-container .item7 {
   border-bottom-left-radius: 2em;
   display: flex;
-  align-items: end;
+  flex-direction: column-reverse;
 }
 
 .game-container .item9 {
@@ -55,12 +64,10 @@ main .game-container {
   display: flex;
   align-items: end;
   justify-content: end;
+  flex-direction: column-reverse;
 }
 
-.game-container .misc-ellipses {
-  box-shadow: none;
-}
-
+/* Misc Ellipses Styles */
 .item1 .misc-ellipses img {
   padding: 1.5em 0;
 }
@@ -71,4 +78,25 @@ main .game-container {
 
 .item9 .misc-ellipses img {
   padding: 0em 1em;
+}
+
+/* Misc Lines Styles */
+.item1 .misc-line img {
+  transform: rotate(90deg);
+  margin: 1.5em -0.9em;
+}
+
+.item3 .misc-line img {
+  transform: rotate(90deg);
+  margin: 1.5em -1.1em;
+}
+
+.item7 .misc-line img {
+  transform: rotate(-90deg);
+  margin: 5em -0.9em;
+}
+
+.item9 .misc-line img {
+  transform: rotate(-90deg);
+  margin: 5em -1.1em;
 }
