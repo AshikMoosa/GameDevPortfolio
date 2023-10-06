@@ -42,6 +42,7 @@ main .game-container {
   left: 0;
   right: 0;
   margin: auto auto;
+  z-index: 1;
 }
 
 .game-container div {
@@ -219,12 +220,11 @@ main .game-framer {
 main .game-turn {
   display: flex;
   flex-direction: column;
-  margin-top: 2em;
   width: 800px;
   height: 100px;
   align-items: center;
   position: absolute;
-  bottom: 10em;
+  bottom: 15em;
 }
 
 .game-turn .turn-icons {
@@ -233,6 +233,16 @@ main .game-turn {
   align-items: center;
   width: 100%;
   justify-content: space-evenly;
+}
+
+.turn-icons .planet,
+.turn-icons .star {
+  border: 1px solid #c6d4d9;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+  padding: 4em 0em;
+  z-index: 0;
+  background: #c6d4d9;
 }
 
 .turn-icons .star img {
@@ -250,6 +260,12 @@ main .game-turn {
   box-shadow: 1px 1px 3px 3px #d1c4b3;
   background: #eed3a3;
   border-radius: 5em;
+}
+
+.turn-icons .spinner:hover {
+  cursor: pointer;
+  background: #eed3a3;
+  box-shadow: -3px 3px 5px 5px #b39c80;
 }
 
 .game-turn .score {
@@ -332,6 +348,7 @@ main .game-modal {
   top: -28%;
   right: 0;
   left: 0;
+  z-index: 3;
 }
 
 .game-modal .game-icon img {
