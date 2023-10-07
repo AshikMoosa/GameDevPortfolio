@@ -1,0 +1,14 @@
+<svg width="196" height="200" viewBox="0 0 196 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Planet asset">
+<g id="Union" style="mix-blend-mode:color-burn" filter="url(#filter0_f_2006_1856)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M154 64C166.15 64 176 54.1503 176 42C176 29.8497 166.15 20 154 20C141.85 20 132 29.8497 132 42C132 54.1503 141.85 64 154 64ZM87 180C124.003 180 154 150.003 154 113C154 75.9969 124.003 46 87 46C49.9969 46 20 75.9969 20 113C20 150.003 49.9969 180 87 180Z" fill="#57565E" fill-opacity="0.4"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_2006_1856" x="0" y="0" width="196" height="200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_2006_1856"/>
+</filter>
+</defs>
+</svg>

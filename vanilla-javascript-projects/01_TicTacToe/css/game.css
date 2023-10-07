@@ -235,6 +235,15 @@ main .game-framer {
   margin: -0.1em 0em;
 }
 
+.game-framer div:hover {
+  cursor: pointer;
+  background-image: url("../assets/StarHover.svg");
+}
+
+.game-framer div:hover img {
+  opacity: 0.4;
+}
+
 .game-framer .item1 img {
   border-top-left-radius: 2em;
 }
