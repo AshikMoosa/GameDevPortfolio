@@ -224,15 +224,20 @@ main .game-turn {
   height: 100px;
   align-items: center;
   position: absolute;
-  bottom: 15em;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto auto;
 }
 
 .game-turn .turn-icons {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
   justify-content: space-evenly;
+  width: 100%;
+  margin-top: 27em;
 }
 
 .turn-icons .planet,
