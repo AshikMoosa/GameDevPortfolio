@@ -27,6 +27,36 @@ main {
   margin: auto auto;
 }
 
+main .game-restart {
+  position: relative;
+  bottom: 28em;
+  left: 20em;
+}
+
+main .game-restart .restart {
+  display: inline-flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  background: #4f5d64;
+  box-shadow: -2px 2px 2px 4px rgba(155, 164, 167, 0.4) inset, 2px -2px 2px 4px rgba(0, 0, 0, 0.45) inset;
+  color: #eed2a1;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+main .game-restart .restart:hover {
+  cursor: pointer;
+  background: hsl(200 12% 15% / 1);
+}
+
 main .game-container {
   display: grid;
   grid-template-columns: 1fr 0.65fr 1fr;
@@ -178,8 +208,6 @@ main .game-container {
 
 /* Game Framer Styles */
 main .game-framer {
-  position: absolute;
-  padding: 0.5em 0.5em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -189,8 +217,15 @@ main .game-framer {
   outline: 3px solid rgba(62, 41, 26, 0.7);
   outline-offset: -10px;
   filter: drop-shadow(-4px 4px 8px rgba(62, 41, 26, 0.7));
+  padding: 0.5em 0.5em;
   height: 600px;
   width: 600px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
   z-index: 1;
 }
 
