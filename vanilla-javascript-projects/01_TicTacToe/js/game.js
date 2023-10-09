@@ -55,11 +55,13 @@ gameFramer.addEventListener("click", (event) => {
 // Click Event - Setting Turn
 spinnerElem.addEventListener("click", (event) => {
   if (starElemFilled.hidden) {
+    currentTurn = "star";
     starElemFilled.hidden = false;
     starElem.hidden = true;
     planetElemFilled.hidden = true;
     planetElem.hidden = false;
   } else {
+    currentTurn = "planet";
     planetElemFilled.hidden = false;
     planetElem.hidden = true;
     starElemFilled.hidden = true;
