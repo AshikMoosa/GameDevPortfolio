@@ -61,50 +61,51 @@
 
     <section class="game-framer">
       <div class="item1">
-        <img src="./assets/SlotBackground.svg" alt="slot-background">
+        <img src="./assets/SlotBackground.svg" class="item-slot" alt="slot-background">
+        <!-- <img src="./assets/StarDefault.svg" class="item-slot" alt="slot-background"> -->
       </div>
       <div class="item2">
-        <img src="./assets/SlotBackground.svg" alt="slot-background">
+        <img src="./assets/SlotBackground.svg" class="item-slot" alt="slot-background">
       </div>
       <div class="item3">
-        <img src="./assets/SlotBackground.svg" alt="slot-background">
+        <img src="./assets/SlotBackground.svg" class="item-slot" alt="slot-background">
       </div>
       <div class="item4">
-        <img src="./assets/SlotBackground.svg" alt="slot-background">
+        <img src="./assets/SlotBackground.svg" class="item-slot" alt="slot-background">
       </div>
       <div class="item5">
-        <img src="./assets/SlotBackground.svg" alt="slot-background">
+        <img src="./assets/SlotBackground.svg" class="item-slot" alt="slot-background">
       </div>
       <div class="item6">
-        <img src="./assets/SlotBackground.svg" alt="slot-background">
+        <img src="./assets/SlotBackground.svg" class="item-slot" alt="slot-background">
       </div>
       <div class="item7">
-        <img src="./assets/SlotBackground.svg" alt="slot-background">
+        <img src="./assets/SlotBackground.svg" class="item-slot" alt="slot-background">
       </div>
       <div class="item8">
-        <img src="./assets/SlotBackground.svg" alt="slot-background">
+        <img src="./assets/SlotBackground.svg" class="item-slot" alt="slot-background">
       </div>
       <div class="item9">
-        <img src="./assets/SlotBackground.svg" alt="slot-background">
+        <img src="./assets/SlotBackground.svg" class="item-slot" alt="slot-background">
       </div>
     </section>
 
     <section class="game-turn">
       <div class="turn-icons">
         <div class="planet">
-          <img src="./assets/Hollow.svg" alt="hollow">
+          <img src="./assets/PlanetHollow.svg" alt="hollow">
+          <h1 class="planet-score">0/0</h1>
         </div>
         <div class="spinner">
-          <img src="./assets/misc-restart.svg" alt="spinner">
+          <div class="spinner-container">
+            <img src="./assets/misc-restart.svg" alt="spinner">
+          </div>
+          <h3>v/s</h3>
         </div>
         <div class="star">
-          <img src="./assets/Hollow2.svg" alt="hollow">
+          <img src="./assets/StarDefault.svg" alt="filled">
+          <h1 class="star-score">0/0</h1>
         </div>
-      </div>
-      <div class="score">
-        <h1 class="planet-score">0/0</h1>
-        <h3>v/s</h3>
-        <h1 class="star-score">0/0</h1>
       </div>
     </section>
 
@@ -132,6 +133,8 @@
 
     </section>
   </main>
+
+  <script src="./js/game.js" type="module"></script>
 </body>
 
 </html>
