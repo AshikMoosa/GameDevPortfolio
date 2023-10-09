@@ -5,12 +5,17 @@ let hoverElem;
 
 // References to DOM Elements
 const gameFramer = document.querySelector(".game-framer");
+const starElem = document.querySelector(".star-turn");
+const starElemFilled = document.querySelector(".star-turn-filled");
+const planetElem = document.querySelector(".planet-turn");
+const planetElemFilled = document.querySelector(".planet-turn-filled");
+const spinnerElem = document.querySelector(".spinner-turn");
 
-// Events - Interactions
+console.log(starElem, planetElem, spinnerElem);
+
+// Frame Events - Interactions
 // Hover Event - onMouseOver
 gameFramer.addEventListener("mouseover", (event) => {
-  // debugger;
-  console.log("Hovered", event);
   hoverElem = event.target;
   if (event.target.classList.contains("item-slot")) {
     if (currentTurn === "star") {
@@ -25,9 +30,6 @@ gameFramer.addEventListener("mouseover", (event) => {
 
 // Hover Event - onMouseLeave
 gameFramer.addEventListener("mouseout", (event) => {
-  // Check if the clicked element has the class "item" or any other relevant class
-  // debugger;
-  console.log("Hovered", event);
   if (event.target.classList.contains("item-slot")) {
     event.target.parentElement.children[1].hidden = true;
     event.target.parentElement.children[2].hidden = true;
@@ -36,11 +38,23 @@ gameFramer.addEventListener("mouseout", (event) => {
 
 // Click Event - Placing Objects
 gameFramer.addEventListener("click", (event) => {
-  // Check if the clicked element has the class "item" or any other relevant class
-  console.log("TestClick", event);
   if (event.target.classList.contains("item-slot")) {
-    // Log the text content of the clicked element
     event.target.setAttribute("src", "./assets/StarTest2.png");
   }
 });
-console.log(gameFramer);
+
+// Turn Events
+// Click Event - Setting Turn
+spinnerElem.addEventListener("click", (event) => {
+  if (starElemFilled.hidden) {
+    starElemFilled.hidden = false;
+    starElem.hidden = true;
+    planetElemFilled.hidden = true;
+    planetElem.hidden = false;
+  } else {
+    planetElemFilled.hidden = false;
+    planetElem.hidden = true;
+    starElemFilled.hidden = true;
+    starElem.hidden = false;
+  }
+});
