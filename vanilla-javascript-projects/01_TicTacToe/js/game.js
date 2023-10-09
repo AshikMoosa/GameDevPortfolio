@@ -38,8 +38,16 @@ gameFramer.addEventListener("mouseout", (event) => {
 
 // Click Event - Placing Objects
 gameFramer.addEventListener("click", (event) => {
+  const placedElem = document.createElement("img");
+  placedElem.classList.add("item-slot");
+  placedElem.alt = "placed-background";
   if (event.target.classList.contains("item-slot")) {
-    event.target.setAttribute("src", "./assets/StarTest2.png");
+    if (currentTurn === "star") {
+      placedElem.setAttribute("src", "./assets/StarTest2.png");
+    } else {
+      placedElem.setAttribute("src", "./assets/PlanetTest2.png");
+    }
+    event.target.parentElement.appendChild(placedElem);
   }
 });
 
