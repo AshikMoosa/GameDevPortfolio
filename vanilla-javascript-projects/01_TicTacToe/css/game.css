@@ -25,6 +25,7 @@ main {
   left: 0;
   right: 0;
   margin: auto auto;
+  user-select: none;
 }
 
 main .game-restart {
@@ -230,6 +231,7 @@ main .game-framer {
 
 .game-framer div {
   position: relative;
+  user-select: none;
 }
 
 .game-framer img {
