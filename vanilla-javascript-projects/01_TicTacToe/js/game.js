@@ -9,7 +9,7 @@ const starElem = document.querySelector(".star-turn");
 const starElemFilled = document.querySelector(".star-turn-filled");
 const planetElem = document.querySelector(".planet-turn");
 const planetElemFilled = document.querySelector(".planet-turn-filled");
-const spinnerElem = document.querySelector(".spinner-turn");
+const spinnerElem = document.querySelector(".spinner-container");
 
 console.log(starElem, planetElem, spinnerElem);
 
