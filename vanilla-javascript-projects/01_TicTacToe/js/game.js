@@ -3,7 +3,7 @@ let planetScore = 0;
 let currentTurn = "star";
 let gameStarted = false;
 let hoverElem;
-const intialGameBoard = document.querySelector("main").cloneNode(true);
+const gameBoard = document.querySelector("main").cloneNode(true);
 
 // References to DOM Elements
 const mainElem = document.querySelector("main");
@@ -15,7 +15,7 @@ const planetElemFilled = document.querySelector(".planet-turn-filled");
 const spinnerElem = document.querySelector(".spinner-container");
 const restartElem = document.querySelector(".restart");
 
-console.log(intialGameBoard, starElem, planetElem, spinnerElem);
+console.log(gameBoard, starElem, planetElem, spinnerElem);
 
 // Frame Events - Interactions
 // Hover Event - onMouseOver
