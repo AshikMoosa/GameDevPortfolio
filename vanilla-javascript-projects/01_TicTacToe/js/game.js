@@ -108,5 +108,5 @@ function restartGame() {
 
   // Reset inital DOM Tree
   mainElem.innerHTML = "";
-  mainElem.appendChild(intialGameBoard);
+  mainElem.appendChild(gameBoard);
 }
