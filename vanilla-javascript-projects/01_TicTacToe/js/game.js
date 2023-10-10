@@ -1,6 +1,7 @@
-let starPlaced = false;
-let planetPlaced = false;
+let starScore = 0;
+let planetScore = 0;
 let currentTurn = "star";
+let gameStarted = false;
 let hoverElem;
 
 // References to DOM Elements
@@ -38,14 +39,28 @@ gameFramer.addEventListener("mouseout", (event) => {
 
 // Click Event - Placing Objects
 gameFramer.addEventListener("click", (event) => {
+  if (!gameStarted) {
+    gameStarted = true;
+    spinnerElem.disabled = true;
+  }
   const placedElem = document.createElement("img");
   placedElem.classList.add("item-slot");
   placedElem.alt = "placed-background";
   if (event.target.classList.contains("item-slot")) {
     if (currentTurn === "star") {
       placedElem.setAttribute("src", "./assets/StarTest2.png");
+      currentTurn = "planet";
+      planetElemFilled.hidden = false;
+      planetElem.hidden = true;
+      starElemFilled.hidden = true;
+      starElem.hidden = false;
     } else {
       placedElem.setAttribute("src", "./assets/PlanetTest2.png");
+      currentTurn = "star";
+      starElemFilled.hidden = false;
+      starElem.hidden = true;
+      planetElemFilled.hidden = true;
+      planetElem.hidden = false;
     }
     event.target.parentElement.appendChild(placedElem);
   }
