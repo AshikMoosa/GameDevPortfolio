@@ -41,37 +41,11 @@ gameFramer.addEventListener("mouseout", (event) => {
 });
 
 // Click Event - Placing Objects
-gameFramer.addEventListener("click", (event) => {
-  console.log("clicked cell");
-  if (!gameStarted) {
-    gameStarted = true;
-    spinnerElem.disabled = true;
-  }
-  const placedElem = document.createElement("img");
-  placedElem.classList.add("item-slot");
-  placedElem.alt = "placed-background";
-  if (event.target.classList.contains("item-slot")) {
-    if (currentTurn === "star") {
-      placedElem.setAttribute("src", "./assets/StarTest2.png");
-      selectPlanet();
-    } else {
-      placedElem.setAttribute("src", "./assets/PlanetTest2.png");
-      selectStar();
-    }
-    event.target.parentElement.appendChild(placedElem);
-    event.target.parentElement.style.pointerEvents = "none";
-  }
-});
+gameFramer.addEventListener("click", (event) => placeElement(event));
 
 // Turn Events
 // Click Event - Setting Turn with spinner
-spinnerElem.addEventListener("click", (event) => {
-  if (starElemFilled.hidden) {
-    selectStar();
-  } else {
-    selectPlanet();
-  }
-});
+spinnerElem.addEventListener("click", () => setTurn());
 
 // Restart Event
 // Click Event - Restart Game
@@ -96,17 +70,51 @@ function selectStar() {
   planetElem.hidden = false;
 }
 
+// Set Turns
+function setTurn() {
+  if (starElemFilled.hidden) {
+    selectStar();
+  } else {
+    selectPlanet();
+  }
+}
+
+function placeElement(event) {
+  if (!gameStarted) {
+    gameStarted = true;
+    spinnerElem.disabled = true;
+  }
+  const placedElem = document.createElement("img");
+  placedElem.classList.add("item-slot");
+  placedElem.alt = "placed-background";
+  if (event.target.classList.contains("item-slot")) {
+    if (currentTurn === "star") {
+      placedElem.setAttribute("src", "./assets/StarTest2.png");
+      selectPlanet();
+    } else {
+      placedElem.setAttribute("src", "./assets/PlanetTest2.png");
+      selectStar();
+    }
+    event.target.parentElement.appendChild(placedElem);
+    event.target.parentElement.style.pointerEvents = "none";
+  }
+}
+
 // Restart Game
 function restartGame() {
   // resetting intial states
-  starScore = 0;
-  planetScore = 0;
-  currentTurn = "star";
-  gameStarted = false;
+  // starScore = 0;
+  // planetScore = 0;
+  // currentTurn = "star";
+  // gameStarted = false;
 
-  // Removing Event listeners - TODO
-
+  location.reload();
   // Reset inital DOM Tree
-  mainElem.innerHTML = "";
-  mainElem.appendChild(gameBoard);
+  // mainElem.innerHTML = "";
+  // console.log(gameBoard);
+  // gameBoard.childNodes.forEach((section) => {
+  //   if (section.nodeType === 1) {
+  //     mainElem.appendChild(section);
+  //   }
+  // });
 }
