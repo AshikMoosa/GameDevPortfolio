@@ -15,7 +15,7 @@ const planetElemFilled = document.querySelector(".planet-turn-filled");
 const spinnerElem = document.querySelector(".spinner-container");
 const restartElem = document.querySelector(".restart");
 
-console.log(gameBoard, starElem, planetElem, spinnerElem);
+// console.log(gameBoard, starElem, planetElem, spinnerElem);
 
 // Frame Events - Interactions
 // Hover Event - onMouseOver
@@ -41,7 +41,10 @@ gameFramer.addEventListener("mouseout", (event) => {
 });
 
 // Click Event - Placing Objects
-gameFramer.addEventListener("click", (event) => placeElement(event));
+gameFramer.addEventListener("click", (event) => {
+  placeElement(event);
+  checkResult(event);
+});
 
 // Turn Events
 // Click Event - Setting Turn with spinner
@@ -117,4 +120,9 @@ function restartGame() {
   //     mainElem.appendChild(section);
   //   }
   // });
+}
+
+// Check For Result - Win, Lose or Draw
+function checkResult(event) {
+  console.log("inside checkResult", event);
 }
