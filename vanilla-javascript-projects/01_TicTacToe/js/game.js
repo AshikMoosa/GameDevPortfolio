@@ -5,6 +5,13 @@ let gameStarted = false;
 let hoverElem;
 const gameBoard = document.querySelector("main").cloneNode(true);
 
+// Represents the Tic-Tac-Toe game board
+const board = [
+  ["", "", ""],
+  ["", "", ""],
+  ["", "", ""]
+];
+
 // References to DOM Elements
 const mainElem = document.querySelector("main");
 const gameFramer = document.querySelector(".game-framer");
@@ -14,8 +21,6 @@ const planetElem = document.querySelector(".planet-turn");
 const planetElemFilled = document.querySelector(".planet-turn-filled");
 const spinnerElem = document.querySelector(".spinner-container");
 const restartElem = document.querySelector(".restart");
-
-// console.log(gameBoard, starElem, planetElem, spinnerElem);
 
 // Frame Events - Interactions
 // Hover Event - onMouseOver
@@ -43,7 +48,6 @@ gameFramer.addEventListener("mouseout", (event) => {
 // Click Event - Placing Objects
 gameFramer.addEventListener("click", (event) => {
   placeElement(event);
-  checkResult(event);
 });
 
 // Turn Events
@@ -82,14 +86,28 @@ function setTurn() {
   }
 }
 
+//  Place Element - Place Star or Planet in position
 function placeElement(event) {
+  const elemClassName = event.target.parentElement.className;
+
+  // Use a regular expression to extract the number from the class name
+  const match = elemClassName.match(/\d+/);
+
+  if (match) {
+    const column = parseInt(match[0], 10);
+    let row = column <= 3 ? 0 : column > 3 && column <= 6 ? 1 : 2;
+    board[row][(column - 1) % 3] = currentTurn === "star" ? "X" : "O";
+  }
+
   if (!gameStarted) {
     gameStarted = true;
     spinnerElem.disabled = true;
   }
+
   const placedElem = document.createElement("img");
   placedElem.classList.add("item-slot");
   placedElem.alt = "placed-background";
+
   if (event.target.classList.contains("item-slot")) {
     if (currentTurn === "star") {
       placedElem.setAttribute("src", "./assets/StarTest2.png");
@@ -100,6 +118,16 @@ function placeElement(event) {
     }
     event.target.parentElement.appendChild(placedElem);
     event.target.parentElement.style.pointerEvents = "none";
+  }
+
+  const winner = checkWinner(board);
+  console.log(winner);
+  if (winner === "Draw") {
+    console.log("It's a draw!");
+  } else if (winner) {
+    console.log(`Player ${winner} wins!`);
+  } else {
+    console.log("No winner yet.");
   }
 }
 
@@ -122,7 +150,30 @@ function restartGame() {
   // });
 }
 
-// Check For Result - Win, Lose or Draw
-function checkResult(event) {
-  console.log("inside checkResult", event);
+//  Check Winner - Win, Lose or Draw
+function checkWinner(board) {
+  // Check rows
+  for (let row = 0; row < 3; row++) {
+    if (board[row][0] === board[row][1] && board[row][1] === board[row][2]) {
+      return board[row][0];
+    }
+  }
+
+  // Check columns
+  for (let col = 0; col < 3; col++) {
+    if (board[0][col] === board[1][col] && board[1][col] === board[2][col]) {
+      return board[0][col];
+    }
+  }
+
+  // Check diagonals
+  if (board[0][0] === board[1][1] && board[1][1] === board[2][2]) {
+    return board[0][0];
+  }
+  if (board[0][2] === board[1][1] && board[1][1] === board[2][0]) {
+    return board[0][2];
+  }
+
+  // No winner, it's a draw
+  return "Draw";
 }
