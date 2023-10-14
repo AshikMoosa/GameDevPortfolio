@@ -21,6 +21,10 @@ const planetElem = document.querySelector(".planet-turn");
 const planetElemFilled = document.querySelector(".planet-turn-filled");
 const spinnerElem = document.querySelector(".spinner-container");
 const restartElem = document.querySelector(".restart");
+const gameModal = document.querySelector(".game-modal");
+const gameModalIconContainer = gameModal.querySelector(".game-icon");
+const gameModalIcon = gameModal.querySelector(".game-icon-image");
+const gameModalHeading = gameModal.querySelector(".result-heading");
 
 // Frame Events - Interactions
 // Hover Event - onMouseOver
@@ -120,12 +124,15 @@ function placeElement(event) {
     event.target.parentElement.style.pointerEvents = "none";
   }
 
+  console.log(board);
   const winner = checkWinner(board);
   console.log(winner);
   if (winner === "Draw") {
     console.log("It's a draw!");
+    showResult(winner);
   } else if (winner) {
     console.log(`Player ${winner} wins!`);
+    showResult(winner);
   } else {
     console.log("No winner yet.");
   }
@@ -175,5 +182,25 @@ function checkWinner(board) {
   }
 
   // No winner, it's a draw
-  return "Draw";
+  if ([0, 1, 2].every((row) => !board[row].includes(""))) {
+    return "Draw";
+  }
+}
+
+// Show Result - Modal indication Win or Draw
+function showResult(winner) {
+  gameModal.style.display = "flex";
+  if (winner === "X") {
+    mainElem.setAttribute("star-wins", "");
+  } else if (winner === "O") {
+    mainElem.setAttribute("planet-wins", "");
+    gameModalIcon.src = "./assets/PlanetDefault.svg";
+    gameModalHeading.textContent = "PLANET WINS";
+  } else {
+    mainElem.setAttribute("draw-match", "");
+    gameModalHeading.textContent = "DRAW MATCH";
+    const gameIcon = document.createElement("img");
+    gameIcon.src = "./assets/PlanetDefault.svg";
+    gameModalIconContainer.appendChild(gameIcon);
+  }
 }
