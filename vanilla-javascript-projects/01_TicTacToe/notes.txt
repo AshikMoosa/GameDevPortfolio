@@ -1,0 +1,6 @@
+TODO
+-Draw - 0 points
+-Responsiveness
+-Difficulty vs cpu - easy med hard 
+-LocalStorage - start new or resume
+-UserAuthentication/Session - 2player hosting

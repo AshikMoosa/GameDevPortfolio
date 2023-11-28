@@ -21,6 +21,7 @@ const planetElem = document.querySelector(".planet-turn");
 const planetElemFilled = document.querySelector(".planet-turn-filled");
 const spinnerElem = document.querySelector(".spinner-container");
 const restartElem = document.querySelector(".restart");
+const restartElemModal = document.querySelector(".restart-modal");
 const gameModal = document.querySelector(".game-modal");
 const gameModalIconContainer = gameModal.querySelector(".game-icon");
 const gameModalIcon = gameModal.querySelector(".game-icon-image");
@@ -61,6 +62,7 @@ spinnerElem.addEventListener("click", () => setTurn());
 // Restart Event
 // Click Event - Restart Game
 restartElem.addEventListener("click", () => restartGame());
+restartElemModal.addEventListener("click", () => restartGame());
 
 // Helper Methods
 // SelectPlanet
