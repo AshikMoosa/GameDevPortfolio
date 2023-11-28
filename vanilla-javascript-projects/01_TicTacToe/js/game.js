@@ -168,27 +168,27 @@ function restartGame() {
   // });
 }
 
-//  Check Winner - Win, Lose or Draw
+// Check Winner - Win, Lose or Draw
 function checkWinner(board) {
   // Check rows
   for (let row = 0; row < 3; row++) {
-    if (board[row][0] === board[row][1] && board[row][1] === board[row][2]) {
+    if (board[row][0] === board[row][1] && board[row][1] === board[row][2] && board[row][0] !== "") {
       return board[row][0];
     }
   }
 
   // Check columns
   for (let col = 0; col < 3; col++) {
-    if (board[0][col] === board[1][col] && board[1][col] === board[2][col]) {
+    if (board[0][col] === board[1][col] && board[1][col] === board[2][col] && board[0][col] !== "") {
       return board[0][col];
     }
   }
 
   // Check diagonals
-  if (board[0][0] === board[1][1] && board[1][1] === board[2][2]) {
+  if (board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[0][0] !== "") {
     return board[0][0];
   }
-  if (board[0][2] === board[1][1] && board[1][1] === board[2][0]) {
+  if (board[0][2] === board[1][1] && board[1][1] === board[2][0] && board[0][2] !== "") {
     return board[0][2];
   }
 
@@ -196,6 +196,9 @@ function checkWinner(board) {
   if ([0, 1, 2].every((row) => !board[row].includes(""))) {
     return "Draw";
   }
+
+  // No winner yet
+  return null;
 }
 
 // Show Result - Modal indication Win or Draw
