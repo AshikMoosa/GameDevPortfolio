@@ -101,13 +101,13 @@ main .game-restart .restart:hover {
 
 main .game-container {
   display: grid;
-  grid-template-columns: 1fr 0.65fr 1fr;
-  grid-template-rows: 1fr 0.65fr 1fr;
+  grid-template-columns: 130px 140px 130px;
+  grid-template-rows: 130px 140px 130px;
   background: rgba(79, 93, 100, 1);
   border-radius: 2em;
   box-shadow: -32px 44px 60px 0px rgba(15, 12, 36, 0.35), -8px 15px 20px 0px rgba(0, 0, 0, 0.65), -4px 4px 4px 4px rgba(155, 164, 167, 0.4) inset, 2px -2px 4px 6px rgba(0, 0, 0, 0.45) inset;
-  height: 800px;
-  width: 800px;
+  height: 400px;
+  width: 400px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -251,16 +251,16 @@ main .game-container {
 /* Game Framer Styles */
 main .game-framer {
   display: grid;
-  grid-template-columns: 200px 200px 200px;
-  grid-template-rows: 200px 200px 200px;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
   background-image: linear-gradient(223deg, #fefcf4 3.36%, #d1c4b3 95.72%);
   box-shadow: -24px 36px 44px 0px rgba(15, 12, 36, 0.55), -8px 15px 20px 0px rgba(0, 0, 0, 0.55);
   border-radius: 2em;
   outline: 10px solid #fefcf4;
   outline-offset: 3px;
   filter: drop-shadow(-4px 4px 8px rgba(62, 41, 26, 0.7));
-  height: 600px;
-  width: 600px;
+  height: 200px;
+  width: 200px;
   position: absolute;
   top: 0;
   bottom: 0;
