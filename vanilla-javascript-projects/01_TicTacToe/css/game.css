@@ -129,12 +129,25 @@ main .game-container {
 .game-container h2 {
   height: fit-content;
   color: #eed3a3;
-  font-size: 16px;
+  font-size: 8px;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
   letter-spacing: 14.4px;
   text-transform: uppercase;
+}
+
+.game-container h3 {
+  height: fit-content;
+  color: #eed3a3;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 7.2px;
+  text-transform: uppercase;
+  text-align: end;
+  margin-top: 5em;
 }
 
 .game-container .item1 {
