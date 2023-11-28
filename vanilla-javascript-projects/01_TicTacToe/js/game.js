@@ -1,12 +1,13 @@
 let starScore = 0;
 let planetScore = 0;
+let totalMatches = 1;
 let currentTurn = "star";
 let gameStarted = false;
 let hoverElem;
 const gameBoard = document.querySelector("main").cloneNode(true);
 
 // Represents the Tic-Tac-Toe game board
-const board = [
+let board = [
   ["", "", ""],
   ["", "", ""],
   ["", "", ""]
@@ -15,6 +16,7 @@ const board = [
 // References to DOM Elements
 const mainElem = document.querySelector("main");
 const gameFramer = document.querySelector(".game-framer");
+const gameFramerItems = gameFramer.querySelectorAll(".item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8, .item9");
 const starElem = document.querySelector(".star-turn");
 const starElemFilled = document.querySelector(".star-turn-filled");
 const planetElem = document.querySelector(".planet-turn");
@@ -22,11 +24,15 @@ const planetElemFilled = document.querySelector(".planet-turn-filled");
 const spinnerElem = document.querySelector(".spinner-container");
 const restartElem = document.querySelector(".restart");
 const restartElemModal = document.querySelector(".restart-modal");
+const nextRoundElemModal = document.querySelector(".next-round-modal");
 const gameModal = document.querySelector(".game-modal");
 const gameModalIconContainer = gameModal.querySelector(".game-icon");
 const gameModalIcon = gameModal.querySelector(".game-icon-image");
 const gameModalHeading = gameModal.querySelector(".result-heading");
+const starScoreElem = document.querySelector(".star-score");
+const planetScoreElem = document.querySelector(".planet-score");
 
+console.log(gameFramerItems);
 // Frame Events - Interactions
 // Hover Event - onMouseOver
 gameFramer.addEventListener("mouseover", (event) => {
@@ -63,6 +69,9 @@ spinnerElem.addEventListener("click", () => setTurn());
 // Click Event - Restart Game
 restartElem.addEventListener("click", () => restartGame());
 restartElemModal.addEventListener("click", () => restartGame());
+
+// Next Round
+nextRoundElemModal.addEventListener("click", () => continueGame());
 
 // Helper Methods
 // SelectPlanet
@@ -194,15 +203,56 @@ function showResult(winner) {
   gameModal.style.display = "flex";
   if (winner === "X") {
     mainElem.setAttribute("star-wins", "");
+    starScore++;
+    totalMatches++;
   } else if (winner === "O") {
     mainElem.setAttribute("planet-wins", "");
     gameModalIcon.src = "./assets/PlanetDefault.svg";
     gameModalHeading.textContent = "PLANET WINS";
+    planetScore++;
+    totalMatches++;
   } else {
     mainElem.setAttribute("draw-match", "");
     gameModalHeading.textContent = "DRAW MATCH";
     const gameIcon = document.createElement("img");
     gameIcon.src = "./assets/PlanetDefault.svg";
     gameModalIconContainer.appendChild(gameIcon);
+    totalMatches++;
   }
+  updateScores();
+
+  console.log("scores:", starScore, planetScore);
+}
+
+// Update Scores
+function updateScores() {
+  starScoreElem.innerText = starScore + "/" + totalMatches;
+  planetScoreElem.innerText = planetScore + "/" + totalMatches;
+}
+
+// Continue Game
+function continueGame() {
+  // Remove win or draw modal
+  gameModal.style.display = "none";
+  mainElem.removeAttribute("star-wins");
+  mainElem.removeAttribute("planet-wins");
+  mainElem.removeAttribute("draw-match");
+
+  // Reset board matrix
+  board = [
+    ["", "", ""],
+    ["", "", ""],
+    ["", "", ""]
+  ];
+
+  // Remove last child from all squares/game-framer items & set pointer events to all
+  gameFramerItems.forEach(function (item) {
+    // Check if the item has more than 3 child nodes
+    if (item.children.length > 3) {
+      // Remove the last child node
+      item.removeChild(item.lastElementChild);
+      // Set pointer-events property to 'all'
+      item.style.pointerEvents = "all";
+    }
+  });
 }
